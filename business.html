@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoolCare Home Services | Lahore (Demo)</title>
+<meta name="description" content="Demo business website: service cards, quote request form with Pakistani phone check, and FAQ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2239;--blue:#0E6BA8;--sun:#FFC93C;--ice:#EAF4FA;--white:#fff;--muted:#4F6577;--line:#CFE0EB;
+--display:'Fraunces',Georgia,serif;--body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--navy);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);line-height:1.1}
+h2{font-size:clamp(1.9rem,6vw,2.8rem);font-weight:800;margin-bottom:8px}
+.demo-bar{background:var(--navy);color:#fff;text-align:center;font-size:.85rem;padding:8px 12px}
+.demo-bar a{color:var(--sun)}
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.4rem;text-decoration:none;color:var(--blue)}
+nav{display:flex;gap:18px;align-items:center;font-weight:700;font-size:.95rem}
+nav a{text-decoration:none}
+.pill{background:var(--sun);padding:8px 16px;border-radius:999px}
+@media(max-width:560px){nav a:not(.pill){display:none}}
+.hero{background:var(--blue);color:#fff;padding:64px 0 70px}
+.hero h1{font-size:clamp(2.3rem,8vw,4.4rem);font-weight:800;max-width:15ch;margin-bottom:18px}
+.lead{max-width:52ch;font-size:1.12rem;margin-bottom:30px;color:#DCEEF8}
+.promises{list-style:none;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.promises li{border-left:4px solid var(--sun);padding:4px 0 4px 14px;display:grid}
+.promises span{color:#DCEEF8;font-size:.95rem}
+.block{padding:70px 20px}
+.sub{color:var(--muted);margin-bottom:26px;max-width:52ch}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{border:1.5px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.card h3{font-size:1.3rem}
+.card p{color:var(--muted);font-size:.95rem;flex:1}
+.card .from{margin-top:8px;font-weight:800}
+.btn{display:inline-block;font:inherit;font-weight:800;text-decoration:none;border:0;border-radius:999px;padding:12px 22px;background:var(--navy);color:#fff;cursor:pointer;text-align:center}
+.btn:hover{background:var(--blue)}
+.card .btn{margin-top:10px}
+.quote{background:var(--ice);padding:70px 0;border-block:1px solid var(--line)}
+.grid{display:grid;gap:30px}
+@media(min-width:800px){.grid{grid-template-columns:1fr 1.1fr}}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:700;font-size:.95rem}
+input,select{font:inherit;padding:12px 14px;border:1.5px solid #A9C3D4;border-radius:10px;background:#fff;color:var(--navy);width:100%}
+.err{color:#B00020;font-weight:700;min-height:1.3em}
+.ok{background:#E3F3E3;border:1px solid #9CCB9C;border-radius:10px;padding:12px 14px;font-weight:700}
+.faq{display:grid;gap:10px;margin-top:20px}
+details{border:1.5px solid var(--line);border-radius:14px;padding:0 18px}
+summary{cursor:pointer;font-weight:800;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--blue)}
+details[open] summary::after{content:"-"}
+details p{padding-bottom:16px;color:var(--muted)}
+footer{padding:26px 0 90px;text-align:center;font-size:.88rem;color:var(--muted)}
+.sticky{display:none}
+@media(max-width:700px){
+  .sticky{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);z-index:20}
+  .sticky a{text-decoration:none;text-align:center;font-weight:800;padding:13px;border-radius:999px}
+  .sticky .call{background:var(--navy);color:#fff}
+  .sticky .ask{background:var(--sun)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo project. CoolCare is a made-up company; the phone number and prices are not real. <a href="index.html">Back to portfolio</a></div>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#">CoolCare</a>
+    <nav><a href="#services">Services</a><a href="#faq">FAQ</a><a class="pill" href="#quote">Get a quote</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Fast, honest repairs for your home</h1>
+      <p class="lead">AC, plumbing, electrical and deep cleaning across Lahore. Book online and we'll call you back within 30 minutes.</p>
+      <ul class="promises">
+        <li><strong>Same-day visit</strong><span>Call before noon and a technician comes today.</span></li>
+        <li><strong>Price before work</strong><span>You approve the cost first. No surprises after.</span></li>
+        <li><strong>30-day warranty</strong><span>If the same problem comes back, we fix it free.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="services" class="wrap block">
+    <h2>Our services</h2>
+    <p class="sub">Starting prices in PKR. The final price is confirmed before we start.</p>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="quote" class="quote">
+    <div class="wrap grid">
+      <div>
+        <h2>Get a quote</h2>
+        <p class="sub">Fill this in and we'll call you back. This is a demo form, so nothing is sent.</p>
+      </div>
+      <form id="form" novalidate>
+        <label>Service<select id="service"></select></label>
+        <label>Your area<input id="area" placeholder="DHA Phase 5, Johar Town, Model Town..."></label>
+        <label>Your name<input id="name" autocomplete="name" placeholder="Sana Khan"></label>
+        <label>Phone number<input id="phone" inputmode="tel" autocomplete="tel" placeholder="0300 1234567"></label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit">Request my quote</button>
+        <p class="ok" id="ok" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap block">
+    <h2>Questions people ask</h2>
+    <div class="faq" id="faqList"></div>
+  </section>
+</main>
+
+<footer><div class="wrap">Demo website by Ayesha Nadeem. CoolCare Home Services is not a real company.</div></footer>
+
+<div class="sticky">
+  <a href="tel:03001234567" class="call">Call</a>
+  <a href="#quote" class="ask">Get a quote</a>
+</div>
+<script>
+// Change services, prices and FAQ answers here. All prices are made up.
+const SERVICES = [
+  { name: "AC service and repair", text: "Gas refill, cleaning, installation and fault finding for split and window ACs.", from: 2500 },
+  { name: "Plumbing", text: "Leaks, blocked drains, tap and geyser fitting, water tank cleaning.", from: 1500 },
+  { name: "Electrician", text: "Wiring faults, switches, fans, lights, breakers and UPS connections.", from: 1200 },
+  { name: "Deep cleaning", text: "Kitchen, bathrooms, floors and windows for homes and flats.", from: 6000 },
+];
+
+const FAQ = [
+  ["How fast can someone visit?", "If you request before noon, we aim to visit the same day. Later requests are booked for the next morning."],
+  ["When do I find out the price?", "Our technician inspects the problem and tells you the price before starting. You only pay if you agree."],
+  ["What does the 30-day warranty cover?", "If the same problem comes back within 30 days of the job, we repair it again at no charge."],
+  ["Which areas do you cover?", "This demo covers Lahore only: DHA, Gulberg, Johar Town, Model Town and nearby areas."],
+  ["How do I pay?", "Cash or bank transfer after the work is done and you are happy with it."],
+];
+
+const $ = s => document.querySelector(s);
+const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pkr = n => "PKR " + n.toLocaleString("en-US");
+
+// service cards and the select box in the form
+$("#cards").innerHTML = SERVICES.map((s, i) => `
+  <article class="card">
+    <h3>${esc(s.name)}</h3>
+    <p>${esc(s.text)}</p>
+    <span class="from">From ${pkr(s.from)}</span>
+    <a class="btn" href="#quote" data-i="${i}">Get a quote</a>
+  </article>`).join("");
+$("#service").innerHTML = SERVICES.map(s => `<option>${esc(s.name)}</option>`).join("");
+
+// "Get a quote" on a card picks that service in the form
+$("#cards").addEventListener("click", e => {
+  const a = e.target.closest("a[data-i]");
+  if (!a) return;
+  $("#service").value = SERVICES[a.dataset.i].name;
+});
+
+// FAQ (open and close)
+$("#faqList").innerHTML = FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+
+// Pakistani mobile: 03XX-XXXXXXX, +92 3XX XXXXXXX, 0092 3XX XXXXXXX
+function validPkPhone(v) {
+  const d = v.replace(/[\s-]/g, "").replace(/^\+/, "").replace(/^0092/, "92");
+  return /^(92|0)3\d{9}$/.test(d);
+}
+
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const area = $("#area").value.trim();
+  const name = $("#name").value.trim();
+  const phone = $("#phone").value.trim();
+  const err = $("#err"), ok = $("#ok");
+  ok.hidden = true;
+  if (area.length < 3) { err.textContent = "Tell us your area, like DHA Phase 5."; $("#area").focus(); return; }
+  if (name.length < 2) { err.textContent = "Please enter your name."; $("#name").focus(); return; }
+  if (!validPkPhone(phone)) { err.textContent = "Enter a Pakistani mobile number, like 0300 1234567."; $("#phone").focus(); return; }
+  err.textContent = "";
+  ok.textContent = `Thank you, ${name}. This is a demo, so no request was sent. A real site would call you about "${$("#service").value}" in ${area}.`;
+  ok.hidden = false;
+  e.target.reset();
+});
+</script>
+</body>
+</html>

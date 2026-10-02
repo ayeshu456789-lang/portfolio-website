@@ -2,10 +2,9 @@
    Anything left empty is hidden or skipped automatically. */
 const CONFIG = {
   whatsapp: "923156170695",   // digits only with country code (92 = Pakistan, no leading 0)
-  email: "ayesha8788122@gmail.com",      // e.g. yourname@gmail.com
+  email: "ayeshu456789@gmail.com",      // e.g. yourname@gmail.com
   linkedin: "https://www.linkedin.com/in/ayesha-nadeem-b378413a2/",   // full LinkedIn profile URL
-  github: "https://github.com/ayeshu456789-lang",     // full GitHub profile URL
-  photo: "https://files.catbox.moe/k04rgy.jpeg",   // your photo file, keep it in the same folder as index.html
+  github: "https://github.com/ayesha48819-blip",     // full GitHub profile URL
 };
 /* Your prices in PKR: [lowest, highest]. Change them to your own rates. */
 const PRICES = {
@@ -34,11 +33,17 @@ const TESTIMONIALS = [
 
 /* Your real projects. Delete the placeholders once you have yours. */
 const PROJECTS = [
-  { placeholder:true }, { placeholder:true }, { placeholder:true },
-  // Example:
-  // { title:"MERN Todo App", text:"Task app with login, saved tasks and a clean mobile layout.",
-  //   tech:["React","Node.js","Express","MongoDB"], image:"shots/todo.png",
-  //   live:"https://your-app.vercel.app", code:"https://github.com/you/todo-app" },
+  { label:"Demo project", title:"Restaurant Landing Page",
+    text:"A modern, responsive website for a restaurant with a menu section, a reservation form and a mobile-friendly layout.",
+    tech:["HTML","CSS","JavaScript"], image:"images/restaurant.jpg", live:"restaurant.html", code:"" },
+  { label:"Demo project", title:"Online Store UI",
+    text:"A clean e-commerce interface with product cards, category filter, a working shopping cart and a free-delivery progress bar.",
+    tech:["HTML","CSS","JavaScript"], image:"images/store.jpg", live:"store.html", code:"" },
+  { label:"Demo project", title:"Small Business Website",
+    text:"A professional website for a small home-services business, with service cards, a quote request form and an FAQ.",
+    tech:["HTML","CSS","JavaScript"], image:"images/business.jpg", live:"business.html", code:"" },
+  // When a project is ready: add its screenshot in image:"...", the hosted site in live:"...", and the GitHub repo in code:"..."
+  // Example: { label:"Demo project", title:"...", text:"...", tech:["React"], image:"shots/one.png", live:"https://...", code:"https://github.com/..." },
 ];
 /* ======================================== */
 
@@ -46,8 +51,6 @@ const $ = s => document.querySelector(s);
 const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pkr = n => n.toLocaleString('en-US');
 
-// photo
-if (CONFIG.photo) { const p=$("#photo"); p.onerror=()=>{ p.onerror=null; p.src="image.png"; }; p.src=CONFIG.photo; p.classList.add("on"); $("#heroGrid").classList.add("has-photo"); }
 
 // before/after slider
 const frame=$("#frame"), slider=$("#slider");
@@ -71,9 +74,9 @@ $("#projects").innerHTML = list.map(p => p.placeholder
   ? `<article class="proj empty"><div class="shot">Project screenshot</div><div class="body"><h3>Your next project here</h3><p>Add a real project in the PROJECTS list at the bottom of this file, with a live link and your GitHub code.</p></div></article>`
   : `<article class="proj">
       <div class="shot">${p.image?`<img src="${esc(p.image)}" alt="Screenshot of ${esc(p.title)}" loading="lazy">`:esc(p.title)}</div>
-      <div class="body"><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>
+      <div class="body">${p.label?`<span class="lab">${esc(p.label)}</span>`:""}<h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>
       <div class="chips">${(p.tech||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div>
-      <div class="row">${p.live?`<a href="${esc(p.live)}" target="_blank" rel="noopener">Live site</a>`:""}${p.code?`<a href="${esc(p.code)}" target="_blank" rel="noopener">Source code</a>`:""}</div></div></article>`).join("");
+      <div class="row">${p.live?`<a href="${esc(p.live)}" target="_blank" rel="noopener">Live demo</a>`:""}${p.code?`<a href="${esc(p.code)}" target="_blank" rel="noopener">Source code</a>`:""}</div></div></article>`).join("");
 
 // contact buttons
 const ICONS = {
